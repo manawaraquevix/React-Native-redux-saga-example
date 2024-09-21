@@ -1,16 +1,8 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-// import { Icon } from '@rneui/themed';
 
-// import styles from './styles';
-
-// Containers
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/home/Home';
 import SecondScreen from '../screens/SecondScreen';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-// Components
-// import DrawerContent from '../components/DrawerContent';
 
 const MyStack = createNativeStackNavigator();
 
@@ -21,7 +13,7 @@ const Routes = () => {
       initialRouteName="Home">
       <MyStack.Screen name="Home" component={Home} />
 
-      <MyStack.Screen name="CustomModule" component={SecondScreen} />
+      <MyStack.Screen name="SecondScreen" component={SecondScreen} />
     </MyStack.Navigator>
   );
 };

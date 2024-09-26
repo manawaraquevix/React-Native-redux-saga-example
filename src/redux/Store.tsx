@@ -1,4 +1,4 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {configureStore, Tuple} from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import {combinedReducers} from './reducer';
 import rootSaga from './sagas';
@@ -10,7 +10,7 @@ const middlewares = [sagaMiddleware];
 
 export const store = configureStore({
   reducer: combinedReducers,
-  middleware: () => [sagaMiddleware],
+  middleware: () => new Tuple(sagaMiddleware),
 });
 
 sagaMiddleware.run(rootSaga);
